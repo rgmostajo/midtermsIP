@@ -3,15 +3,17 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 
-public class Monster{
+public class Hero{
 	
-	public int xPos = 150;
-	public int yPos = 300;
-	
+	public int x = 30;
+	public int y = 30;
+
+	public int state = 0;
+
 	public BufferedImage image;
-	public URL resource = getClass().getResource("slime/idle0.png");
+	public URL resource = getClass().getResource("run0.png");
 
-	public Monster(){
+	public Hero(){
 		try{
 			image = ImageIO.read(resource);
 		}
@@ -20,9 +22,9 @@ public class Monster{
 		}
 	}
 
-	public Monster(int xPass, int yPass){
-		xPos = xPass;
-		yPos = yPass;
+	public Hero(int xHPass, int yHPass){
+		x = xHPass;
+		y = yHPass;
 
 		try{
 			image = ImageIO.read(resource);
@@ -31,4 +33,5 @@ public class Monster{
 			e.printStackTrace();
 		}
 	}
+
 }
